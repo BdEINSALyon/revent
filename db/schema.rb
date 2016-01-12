@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112123019) do
+ActiveRecord::Schema.define(version: 20160112130926) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id",    limit: 4
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(version: 20160112123019) do
     t.integer  "team_id",         limit: 4
     t.integer  "document_id",     limit: 4
     t.integer  "registration_id", limit: 4
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "participant_id", limit: 4
+    t.integer  "bill_id",        limit: 4
+    t.float    "price",          limit: 24
+    t.float    "taxes",          limit: 24
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "questions", force: :cascade do |t|

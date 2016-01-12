@@ -10,4 +10,4 @@ two:
   number: MyString
   user_id: 1
   team_id: 1
-  billing_adress_id: 1
+  billing_address_id: 1
