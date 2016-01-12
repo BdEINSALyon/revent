@@ -1,0 +1,9 @@
+.navbar {
+  li.welcome{
+    color: $navbar-default-link-color;
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+    font-size: $font-size-base;
+    line-height: $line-height-computed;
+    height: $navbar-height;
+  }
+}

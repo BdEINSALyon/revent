@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  question: MyString
+  type: 
+  registration_id: 1
+  default_value: MyText
+
+two:
+  question: MyString
+  type: 
+  registration_id: 1
+  default_value: MyText
