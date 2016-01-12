@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   has_many :participants
   has_many :bills
   has_many :billing_addresses
+  has_many :teams, :through => :participants
+
+  def team
+    teams.first
+  end
 end

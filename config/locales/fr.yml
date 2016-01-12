@@ -1,0 +1,19 @@
+fr:
+  errors:
+    messages:
+      can_not_register: "Impossible d'enregistrer votre inscription"
+  activerecord:
+    attributes:
+      user:
+        password: Mot de passe
+        email: Email
+        first_name: Prénom
+        last_name: Nom
+        phone: Téléphone
+        remember_me: Se souvenir de moi
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: " est déjà utilisé par un autre compte"

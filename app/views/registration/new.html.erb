@@ -1,0 +1,10 @@
+<h1>Inscription</h1>
+<%= bootstrap_devise_error_messages! %>
+<%= bootstrap_form_for(User.new, :url => registration_path(:user)) do |f| %>
+    <%= f.text_field :first_name, placeholder: 'Prénom', hide_label: true, wrapper: {class: 'col-md-6'} %>
+    <%= f.text_field :last_name, placeholder: 'Nom', hide_label: true, wrapper: {class: 'col-md-6'} %>
+    <%= f.text_field :email, placeholder: 'Email', hide_label: true, wrapper: {class: 'col-md-12'} %>
+    <%= f.password_field :password, placeholder: 'Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'} %>
+    <%= f.password_field :password_confirmation, placeholder: 'Confirmation Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'}%>
+    <div class="col-md-12"><%= f.submit "M'inscrire au #{site(:event_name)}", class: 'btn btn-primary btn-block' %></div>
+<% end %>

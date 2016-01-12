@@ -38,6 +38,7 @@ gem 'devise'
 # Because we love bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise-bootstrap-views'
+gem 'bootstrap_form'
 
 # Used to store settings
 gem 'rails-settings-cached', '~> 0.4.0'
