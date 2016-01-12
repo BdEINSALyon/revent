@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
 #  database: revent_production
 #  username: revent
 #  password: <%= ENV['REVENT_DATABASE_PASSWORD'] %>
