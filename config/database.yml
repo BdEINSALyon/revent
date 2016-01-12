@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: revent_production
-  username: revent
-  password: <%= ENV['REVENT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+#  database: revent_production
+#  username: revent
+#  password: <%= ENV['REVENT_DATABASE_PASSWORD'] %>
