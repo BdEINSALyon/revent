@@ -10,11 +10,11 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 5
-  username: root
-  password:
+  username: revent
+  password: revent
   host: localhost
 
 development:
@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['CLEARDB_DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 #  database: revent_production
 #  username: revent
 #  password: <%= ENV['REVENT_DATABASE_PASSWORD'] %>
