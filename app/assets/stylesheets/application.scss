@@ -887,6 +887,7 @@ $dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "template";
 @import "devise_bootstrap_views";

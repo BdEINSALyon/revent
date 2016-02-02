@@ -1,0 +1,26 @@
+%h1
+  = t('revent.my_team')
+%p
+  = t('revent.its_name_is')
+  %span
+    = @team.name
+%h2
+  = t('revent.team.participants')
+%table.table.table-bordered.table-striped
+  %thead
+    %td= t('name')
+    %td= t('registration_state')
+    %td= t('actions')
+
+  - @team.participants.each do |p|
+    %tr
+      %td= p.first_name + ' ' + p.last_name.to_s.upcase
+      %td
+        - if p.valid_participation
+          .label.label-success=t('valid')
+        - else
+          .label.label-warning=t('not_valid')
+      %td
+        =link_to [:edit_team, p], class: %w(btn btn-primary) do
+          %span.glyphicon.glyphicon-edit
+          %span=t('edit')

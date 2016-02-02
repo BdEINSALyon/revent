@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112164224) do
+ActiveRecord::Schema.define(version: 20160127174854) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.integer  "question_id",    limit: 4
-    t.integer  "participant_id", limit: 4
-    t.text     "value",          limit: 65535
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "question_id"
+    t.integer  "participant_id"
+    t.text     "value"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "billing_addresses", force: :cascade do |t|
@@ -35,9 +38,9 @@ ActiveRecord::Schema.define(version: 20160112164224) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "number",             limit: 255
-    t.integer  "user_id",            limit: 4
-    t.integer  "team_id",            limit: 4
-    t.integer  "billing_address_id", limit: 4
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.integer  "billing_address_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
@@ -45,11 +48,11 @@ ActiveRecord::Schema.define(version: 20160112164224) do
   create_table "document_models", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "question",    limit: 255
-    t.text     "description", limit: 65535
+    t.text     "description"
     t.string   "type",        limit: 255
     t.boolean  "required"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "documents", force: :cascade do |t|
@@ -58,58 +61,58 @@ ActiveRecord::Schema.define(version: 20160112164224) do
   end
 
   create_table "participants", force: :cascade do |t|
-    t.string   "first_name",      limit: 255
-    t.string   "last_name",       limit: 255
-    t.string   "email",           limit: 255
+    t.string   "first_name",          limit: 255
+    t.string   "last_name",           limit: 255
+    t.string   "email",               limit: 255
     t.date     "birthday"
-    t.string   "gender",          limit: 255
-    t.boolean  "valid"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "team_id",         limit: 4
-    t.integer  "document_id",     limit: 4
-    t.integer  "registration_id", limit: 4
-    t.integer  "user_id",         limit: 4
+    t.string   "gender",              limit: 255
+    t.boolean  "valid_participation"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "team_id"
+    t.integer  "document_id"
+    t.integer  "registration_id"
+    t.integer  "user_id"
   end
 
   create_table "payments", force: :cascade do |t|
-    t.integer  "participant_id", limit: 4
-    t.integer  "bill_id",        limit: 4
-    t.float    "price",          limit: 24
-    t.float    "taxes",          limit: 24
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "participant_id"
+    t.integer  "bill_id"
+    t.float    "price"
+    t.float    "taxes"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "questions", force: :cascade do |t|
     t.string   "question",        limit: 255
     t.string   "type",            limit: 255
-    t.integer  "registration_id", limit: 4
-    t.text     "default_value",   limit: 65535
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.integer  "registration_id"
+    t.text     "default_value"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "registration_pools", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.integer  "amount",     limit: 4
+    t.integer  "amount"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   create_table "registrations", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.float    "price",      limit: 24
-    t.integer  "min_age",    limit: 4
-    t.integer  "max_age",    limit: 4
+    t.float    "price"
+    t.integer  "min_age"
+    t.integer  "max_age"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   create_table "settings", force: :cascade do |t|
-    t.string   "var",        limit: 255,   null: false
-    t.text     "value",      limit: 65535
-    t.integer  "thing_id",   limit: 4
+    t.string   "var",        limit: 255, null: false
+    t.text     "value"
+    t.integer  "thing_id"
     t.string   "thing_type", limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -129,7 +132,7 @@ ActiveRecord::Schema.define(version: 20160112164224) do
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255

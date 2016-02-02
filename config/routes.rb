@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resource 'team', controller: 'team' do
+    resources :participants
+  end
   root 'home#index'
-  get 'new_team', controller: 'home', action: 'create_my_team'
-  get 'team', controller: 'home', action: 'my_team'
   devise_for :users, controllers: {registrations: 'registration'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

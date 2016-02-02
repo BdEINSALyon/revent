@@ -17,3 +17,21 @@ fr:
           attributes:
             email:
               taken: " est déjà utilisé par un autre compte"
+  revent:
+    my_team: "Mon équipe"
+    team:
+      register: "Inscrivez votre équipe à l'événement"
+      participant:
+        title: "Participant"
+        details: "Entrez les détails sur ce participant"
+    its_name_is: "Son nom est"
+    title: "Participant"
+  save: "Enregistrer"
+  woman: "Femme"
+  man: "Homme"
+  name: "Nom"
+  registration_state: "Etat de l'inscription"
+  actions: "Actions"
+  valid: "Valide"
+  not_valid: "Non valide"
+  edit: "Editer"

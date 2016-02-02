@@ -5,4 +5,5 @@ class Participant < ActiveRecord::Base
   has_many :documents
   has_many :answers
   has_many :payments
+  validates_confirmation_of :email
 end

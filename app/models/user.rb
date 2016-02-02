@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   def team
     teams.first
   end
+
+  def as_participant
+    Participant.new user: self, first_name: first_name, last_name: last_name, valid_participation: false
+  end
 end

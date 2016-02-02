@@ -21,3 +21,19 @@
 
 en:
   hello: "Hello world"
+  revent:
+    my_team: "My team"
+    team:
+      register: "Register your team to participate to our event"
+      participants: "Participants"
+      participant:
+        title: "Participant"
+    its_name_is: "Its name is"
+  woman: "Woman"
+  man: "Man"
+  registration_state: "Registration"
+  name: "Name"
+  actions: "Actions"
+  valid: "Valid"
+  not_valid: "Not valid"
+  edit: "Edit"

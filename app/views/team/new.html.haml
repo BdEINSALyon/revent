@@ -1,0 +1,25 @@
+%h1
+  = t('revent.my_team')
+%p
+  = t('revent.team.register')
+= bootstrap_form_for @team, url: {action: 'create'}  do |form|
+  %div
+    = form.text_field :name
+    .row
+      = form.fields_for :participants do |p|
+        .col-md-12
+          .well
+            %h3.no-margin-top
+              = t('revent.team.participant.title')
+            %p
+              = t('revent.team.participant.details')
+            = p.text_field :first_name
+            = p.text_field :last_name
+            = p.text_field :email
+            = p.text_field :email_confirmation
+            = p.select :gender, [[t('man'),'M'],[t('woman'),'F']]
+            = p.date_field :birthday
+            = p.hidden_field :user_id
+    .form-group
+      %button.btn.btn-block.btn-primary{:type=>'submit'}
+        = t('save')

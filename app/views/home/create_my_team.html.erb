@@ -1,1 +1,4 @@
 <h1>Créer mon équipe</h1>
+<% form_for @team, :url => { :action => "update" } do |team_form| %>
+    Name : <%= team_form %>
+<% end %>
