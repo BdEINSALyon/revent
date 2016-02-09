@@ -7,7 +7,7 @@ class RegistrationController < Devise::RegistrationsController
   # The path used after sign up. You need to overwrite this method
   # in your own RegistrationsController.
   def after_sign_up_path_for(resource)
-    root_path
+    team_path
   end
 
   def configure_permitted_parameters

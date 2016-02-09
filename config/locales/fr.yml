@@ -11,6 +11,8 @@ fr:
         last_name: Nom
         phone: Téléphone
         remember_me: Se souvenir de moi
+      team:
+        name: Nom d'équipe
     errors:
       models:
         user:
