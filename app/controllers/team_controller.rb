@@ -23,7 +23,6 @@ class TeamController < ApplicationController
     end
     @team = Team.new
     @team.participants << current_user.as_participant
-    3.times {@team.participants.build}
   end
 
   def update
