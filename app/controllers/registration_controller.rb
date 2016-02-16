@@ -4,12 +4,6 @@ class RegistrationController < Devise::RegistrationsController
 
   protected
 
-  # The path used after sign up. You need to overwrite this method
-  # in your own RegistrationsController.
-  def after_sign_up_path_for(resource)
-    team_path
-  end
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation) }
   end

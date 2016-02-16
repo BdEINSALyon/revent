@@ -16,11 +16,23 @@ class Participant < ActiveRecord::Base
 
   private
   def check_user
-    if user.nil?
+    if user.nil? and !team.nil?
       pass = password_gen
-      self.user = User.new first_name: first_name, last_name: last_name, email: email, password: pass, password_confirmation: pass
-      self.user.save(validate: false)
-      Users.create(user).deliver
+      user = User.find_by_email email
+      if user.nil?
+        user = self.user = User.new first_name: first_name, last_name: last_name, email: email, password: pass, password_confirmation: pass
+        user.team = team
+        self.user.save(validate: false)
+        Users.create(user).deliver
+      else
+        if user.team.nil?
+          user.team = team
+          user.save
+        else
+          raise Exception
+        end
+        self.user = user
+      end
       save!
     end
   end

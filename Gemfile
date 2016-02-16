@@ -39,6 +39,7 @@ gem 'mailgun_rails'
 
 # User management
 gem 'devise'
+gem 'devise-i18n'
 gem 'cancancan' # Permissions
 gem 'rails-i18n'
 
