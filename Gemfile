@@ -34,10 +34,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Email sender
+gem 'mailgun_rails'
+
 # User management
 gem 'devise'
 gem 'cancancan' # Permissions
 gem 'rails-i18n'
+
+# Data Administration
+gem 'rails_admin'
+gem 'rails_admin-i18n'
 
 # Because we love bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'

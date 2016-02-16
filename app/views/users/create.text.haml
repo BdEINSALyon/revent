@@ -1,0 +1,20 @@
+='Bienvenu ' + @user.first_name
+
+
+Tu viens d'être inscrit(e) sur le site d'inscription du
+= site(:event_name)
+
+Tu peux te connecter dès maintenant sur
+= root_url
+avec les identifiants :
+
+Email :
+= @user.email
+Mot de passe :
+= @user.password
+
+
+L'équipe du
+= site(:name)
+
+http://raid.bde-insa-lyon.fr

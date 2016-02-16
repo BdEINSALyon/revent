@@ -1,0 +1,23 @@
+%img{src: 'http://raid.bde-insa-lyon.fr/wp-content/uploads/2014/10/Copy-of-aaaaaaaaaa-logo-declin%C3%A9-noir-vectoris%C3%A91.png', height: '80px'}
+
+%h1{style: 'margin-top: 20px'}= 'Bienvenu ' + @user.first_name
+
+%p
+  Tu viens d'être inscrit(e) sur le site d'inscription du
+  = site(:event_name)
+%p
+  Tu peux te connecter dès maintenant sur
+  = link_to root_url, root_url
+  avec les identifiants :
+%p
+  Email :
+  = @user.email
+  %br
+  Mot de passe :
+  = @user.password
+
+%div{style: 'margin-top: 30px'}
+  L'équipe du
+  = site(:name)
+
+%p=link_to 'http://raid.bde-insa-lyon.fr', 'http://raid.bde-insa-lyon.fr'

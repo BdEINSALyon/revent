@@ -5,16 +5,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :participants
   has_many :bills
-  has_many :billing_addresses
   has_many :teams, :through => :participants
-
   belongs_to :team
+
+  ROLES = %i[admin]
 
   def as_participant
     Participant.new user: self, first_name: first_name, last_name: last_name, valid_participation: false, email: email
   end
 
   def admin?
-    false
+    role == 'admin'
   end
 end
