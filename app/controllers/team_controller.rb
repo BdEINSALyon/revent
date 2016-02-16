@@ -3,13 +3,9 @@ class TeamController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @team = Team.new team_params
-    @team.participants.each do |participant|
-      if participant.first_name.empty? and participant.last_name.empty?
-        @team.participants.delete participant
-      end
-    end
+    @team = Team.new team_params_full
     if @team.valid?
+      @team.users << current_user
       @team.save!
       redirect_to :action => :show
     else
@@ -26,12 +22,15 @@ class TeamController < ApplicationController
   end
 
   def update
+    current_user.team.update team_params
+    redirect_to :action => :show
   end
 
   def edit
     if current_user.team.nil?
       redirect_to :action => :new
     end
+    @team = current_user.team
   end
 
   def show
@@ -39,17 +38,15 @@ class TeamController < ApplicationController
       redirect_to :action => :new
     end
     @team = current_user.team
-    @team.participants.each do |participant|
-      if participant.first_name.empty? and participant.last_name.empty?
-        @team.participants.delete participant
-      end
-    end
-    @team.save!
   end
 
   private
 
   def team_params
-    params.require(:team).permit(:name, :participants_attributes => [:first_name, :last_name, :user_id, :user])
+    params.require(:team).permit(:name, :has_card_reader)
+  end
+
+  def team_params_full
+    params.require(:team).permit(:name, :has_card_reader, :participants_attributes => [:first_name, :last_name, :user_id, :user])
   end
 end

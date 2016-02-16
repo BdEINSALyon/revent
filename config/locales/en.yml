@@ -37,3 +37,6 @@ en:
   valid: "Valid"
   not_valid: "Not valid"
   edit: "Edit"
+  none: "None"
+  add_participant: "Add participant"
+  new_participant: "New Participant"

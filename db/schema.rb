@@ -11,18 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127174854) do
+ActiveRecord::Schema.define(version: 20160211200737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "answers", force: :cascade do |t|
-    t.integer  "question_id"
-    t.integer  "participant_id"
-    t.text     "value"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
 
   create_table "billing_addresses", force: :cascade do |t|
     t.string   "name",                limit: 255
@@ -73,6 +65,11 @@ ActiveRecord::Schema.define(version: 20160127174854) do
     t.integer  "document_id"
     t.integer  "registration_id"
     t.integer  "user_id"
+    t.text     "other"
+    t.text     "meal"
+    t.string   "shirt_size"
+    t.string   "vtt"
+    t.string   "departement"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -82,15 +79,6 @@ ActiveRecord::Schema.define(version: 20160127174854) do
     t.float    "taxes"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.string   "question",        limit: 255
-    t.string   "type",            limit: 255
-    t.integer  "registration_id"
-    t.text     "default_value"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
   end
 
   create_table "registration_pools", force: :cascade do |t|
@@ -121,9 +109,10 @@ ActiveRecord::Schema.define(version: 20160127174854) do
   add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true, using: :btree
 
   create_table "teams", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",            limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "has_card_reader"
   end
 
   create_table "users", force: :cascade do |t|
@@ -141,6 +130,7 @@ ActiveRecord::Schema.define(version: 20160127174854) do
     t.datetime "updated_at",                                      null: false
     t.string   "first_name",             limit: 255
     t.string   "last_name",              limit: 255
+    t.integer  "team_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

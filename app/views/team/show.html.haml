@@ -4,6 +4,7 @@
   = t('revent.its_name_is')
   %span
     = @team.name
+%p= link_to t('edit'), {action: 'edit'}
 %h2
   = t('revent.team.participants')
 %table.table.table-bordered.table-striped
@@ -24,3 +25,5 @@
         =link_to [:edit_team, p], class: %w(btn btn-primary) do
           %span.glyphicon.glyphicon-edit
           %span=t('edit')
+
+=link_to t('add_participant'), :new_team_participant, class: 'btn-block btn btn-success'

@@ -8,9 +8,7 @@ class User < ActiveRecord::Base
   has_many :billing_addresses
   has_many :teams, :through => :participants
 
-  def team
-    teams.first
-  end
+  belongs_to :team
 
   def as_participant
     Participant.new user: self, first_name: first_name, last_name: last_name, valid_participation: false

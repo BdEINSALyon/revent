@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resource 'team', controller: 'team' do
-    resources :participants
-  end
+  resources :participants
+  resource 'team', controller: 'team'
   root 'home#index'
   devise_for :users, controllers: {registrations: 'registration', sessions: 'sessions'}
   # The priority is based upon order of creation: first created -> highest priority.

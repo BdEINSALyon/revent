@@ -37,3 +37,6 @@ fr:
   valid: "Valide"
   not_valid: "Non valide"
   edit: "Editer"
+  none: "Aucun"
+  add_participant: "Ajouter participant"
+  new_participant: "Nouveau participant"

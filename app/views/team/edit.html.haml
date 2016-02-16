@@ -1,2 +1,9 @@
-%h1 TeamsController#edit
-%p Find me in app/views/teams_controller/edit.html.haml
+%h1=t('revent.my_team')
+= bootstrap_form_for @team, url: {action: 'update'}  do |form|
+  %div
+    = form.text_field :name
+    = form.check_box :has_card_reader
+
+    .form-group
+      %button.btn.btn-block.btn-primary{:type=>'submit'}
+        = t('save')
