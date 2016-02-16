@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # User management
 gem 'devise'
+gem 'cancancan' # Permissions
 gem 'rails-i18n'
 
 # Because we love bootstrap

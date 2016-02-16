@@ -1,13 +1,12 @@
-.col-md-12
-  %fieldset
-    %p
-      = t('revent.team.participant.details')
+.col-md-12.row
+  .col-md-6
     = p.text_field :first_name
     = p.text_field :last_name
     = p.text_field :email
     = p.text_field :email_confirmation
     = p.select :gender, [[t('man'),'M'],[t('woman'),'F']]
     = p.date_field :birthday
+  .col-md-6
     = p.text_field :departement
     = p.select :vtt, [[t('none'),'N'],'S','M','L']
     = p.select :shirt_size, %w(S M L XL)

@@ -1,2 +1,6 @@
-%h1 Participants#edit
-%p Find me in app/views/participants/edit.html.haml
+%h1= t('revent.edit_participant')
+= bootstrap_form_for @participant, url: {action: 'update'}, method: 'PATCH'  do |form|
+  = render 'layouts/participant_form', p: form
+  .form-group
+    %button.btn.btn-block.btn-primary{:type=>'submit'}
+      = t('save')

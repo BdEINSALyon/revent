@@ -13,6 +13,20 @@ fr:
         remember_me: Se souvenir de moi
       team:
         name: Nom d'équipe
+        has_card_reader: Nous avons déjà un porte-carte
+      participant:
+        email: Email
+        email_confirmation: Email (confirmez)
+        first_name: Prénom
+        last_name: Nom
+        phone: Téléphone
+        gender: Sexe
+        birthday: Date de naissance
+        departement: Département (INSA)
+        vtt: Taille du VTT
+        shirt_size: Taille du T-Shirt
+        meal: Information sur le régime alimentaire
+        other: Autres informations
     errors:
       models:
         user:
@@ -28,6 +42,9 @@ fr:
         details: "Entrez les détails sur ce participant"
     its_name_is: "Son nom est"
     title: "Participant"
+    about_me: "A propos de moi"
+    explain_first_participant: "Vous devez entrer ici les informations concernant le premier participant de l\'équipe, vous pourrez ajouter les autres par la suite"
+    edit_participant: "Editer un participant"
   save: "Enregistrer"
   woman: "Femme"
   man: "Homme"

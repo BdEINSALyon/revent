@@ -7,8 +7,11 @@
     = form.text_field :name
     = form.check_box :has_card_reader
     .row
+      .col-md-12
+        %h3= t('revent.about_me')
+        %p= t('revent.explain_first_participant')
       = form.fields_for :participants do |p|
-        = render 'participant_form', p: p
+        = render 'layouts/participant_form', p: p
     .form-group
       %button.btn.btn-block.btn-primary{:type=>'submit'}
         = t('save')
