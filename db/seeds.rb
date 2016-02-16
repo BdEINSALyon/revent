@@ -8,5 +8,6 @@
 
 Site.save_default :name, 'Raid INSA Lyon-Orange'
 Site.save_default :opened, true
+Site.save_default :limit_registration_per_team, 2
 Site.save_default :event_name, 'Prologue'
 Site.save_default :copyright, 'Copyright &copy; BdE INSA Lyon 2016, Tous droits r&eacute;serv&eacute;s'

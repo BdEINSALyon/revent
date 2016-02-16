@@ -26,4 +26,5 @@
           %span.glyphicon.glyphicon-edit
           %span=t('edit')
 
-=link_to t('add_participant'), :new_participant, class: 'btn-block btn btn-success'
+- if @team.participants.count < site(:limit_registration_per_team)
+  =link_to t('add_participant'), :new_participant, class: 'btn-block btn btn-success'

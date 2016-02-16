@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :team
 
   def as_participant
-    Participant.new user: self, first_name: first_name, last_name: last_name, valid_participation: false
+    Participant.new user: self, first_name: first_name, last_name: last_name, valid_participation: false, email: email
   end
 
   def admin?
