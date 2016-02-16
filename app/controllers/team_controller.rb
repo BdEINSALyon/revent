@@ -49,6 +49,6 @@ class TeamController < ApplicationController
   def team_params_full
     params.require(:team).permit(:name, :has_card_reader, :participants_attributes =>
         [:first_name, :last_name, :email, :email_confirmation, :gender, :birthday, :departement, :vtt,
-         :shirt_size, :meal, :other])
+         :shirt_size, :meal, :year, :other])
   end
 end

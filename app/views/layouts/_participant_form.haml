@@ -7,7 +7,9 @@
     = p.select :gender, [[t('man'),'M'],[t('woman'),'F']]
     = p.date_field :birthday
   .col-md-6
-    = p.text_field :departement
+    .row
+      .col-md-6= p.select :year, %w{1 2 3 4 5 Doctorat}
+      .col-md-6= p.select :departement, %w{PC BB BIM GCU GEN GE GI GMC GMD GMPP IF SGM TC}
     = p.select :vtt, [[t('none'),'N'],'S','M','L']
     = p.select :shirt_size, %w(S M L XL)
     = p.text_area :meal

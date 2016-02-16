@@ -1,25 +1,35 @@
 <div class="row">
+  <h2><%= site(:name) %></h2>
   <%= bootstrap_devise_error_messages! %>
-  <div class="col-md-6 row">
-    <h2>Inscription</h2>
-    <%= bootstrap_form_for(:user, :url => registration_path(:user), method: 'POST') do |f| %>
-        <%= f.text_field :first_name, placeholder: 'Prénom', hide_label: true, wrapper: {class: 'col-md-6'} %>
-        <%= f.text_field :last_name, placeholder: 'Nom', hide_label: true, wrapper: {class: 'col-md-6'} %>
-        <%= f.text_field :email, placeholder: 'Email', hide_label: true, wrapper: {class: 'col-md-12'} %>
-        <%= f.password_field :password, placeholder: 'Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'} %>
-        <%= f.password_field :confirm_password, placeholder: 'Confirmation Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'}%>
-        <div class="col-md-12"><%= f.submit "M'inscrire au #{site(:event_name)}", class: 'btn btn-primary btn-block' %></div>
-    <% end %>
+  <p>Pour t'inscrire au <%= site(:event_name) %> du <%= site(:name) %>, il te faut créer un compte juste en dessous
+    avec ton mail et un mot de passe. Ensuite, tu pourras inscrire ton équipe puis chacun des membres de ton équipe.
+    Pour cela, il te fondra répondre à toutes les questions du formulaire. Enfin, tu pourras bientôt télécharger sur
+    le site le règlement signé, attestation de nage des 50m, le droit d'image et ton certificat médical qui précise
+    que tu peux pratiquer le raid multi-sports en compétition.</p>
+  <p>Si tu as le moindre problème, tu peux contacter l'équipe Raid : raid (at) bde-insa-lyon.fr</p>
+  <p>A très bientôt sur le prologue et le Raid !</p>
+  <div class="well row">
+    <div class="col-md-6">
+      <h3>Inscription</h3>
+      <%= bootstrap_form_for(:user, :url => registration_path(:user), method: 'POST') do |f| %>
+          <%= f.text_field :first_name, placeholder: 'Prénom', hide_label: true, wrapper: {class: 'col-md-6'} %>
+          <%= f.text_field :last_name, placeholder: 'Nom', hide_label: true, wrapper: {class: 'col-md-6'} %>
+          <%= f.text_field :email, placeholder: 'Email', hide_label: true, wrapper: {class: 'col-md-12'} %>
+          <%= f.password_field :password, placeholder: 'Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'} %>
+          <%= f.password_field :confirm_password, placeholder: 'Confirmation Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'}%>
+          <div class="col-md-12"><%= f.submit "M'inscrire au #{site(:event_name)}", class: 'btn btn-primary btn-block' %></div>
+      <% end %>
 
-  </div>
-  <div class="col-md-6 row">
-    <h2>Connexion</h2>
-    <%= bootstrap_form_for(:user, :url => session_path(:user), method: 'POST') do |f| %>
-        <%= f.text_field :email, placeholder: 'Email', hide_label: true, wrapper: {class: 'col-md-12'} %>
-        <%= f.password_field :password, placeholder: 'Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'}  %>
-        <div class="col-md-12"><%= f.check_box :remember_me %></div>
-        <div class="col-md-6"><%= f.submit 'Me connecter', class: 'btn btn-primary btn-block' %></div>
-        <div class="col-md-6"><%= link_to 'Mot de passe oublié ?', new_password_path(:user) %></div>
-    <% end %>
+    </div>
+    <div class="col-md-6">
+      <h3>Connexion</h3>
+      <%= bootstrap_form_for(:user, :url => session_path(:user), method: 'POST') do |f| %>
+          <%= f.text_field :email, placeholder: 'Email', hide_label: true, wrapper: {class: 'col-md-12'} %>
+          <%= f.password_field :password, placeholder: 'Mot de passe', hide_label: true, wrapper: {class: 'col-md-12'}  %>
+          <div class="col-md-12"><%= f.check_box :remember_me %></div>
+          <div class="col-md-6"><%= f.submit 'Me connecter', class: 'btn btn-primary btn-block' %></div>
+          <div class="col-md-6"><%= link_to 'Mot de passe oublié ?', new_password_path(:user) %></div>
+      <% end %>
+    </div>
   </div>
 </div>

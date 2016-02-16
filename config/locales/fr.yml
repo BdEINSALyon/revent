@@ -23,6 +23,7 @@ fr:
         gender: Sexe
         birthday: Date de naissance
         departement: Département (INSA)
+        year: Année d'étude
         vtt: Taille du VTT
         shirt_size: Taille du T-Shirt
         meal: Information sur le régime alimentaire
